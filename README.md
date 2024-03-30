@@ -233,6 +233,7 @@ SELECT *, COUNT(director) FROM movies GROUP BY director;
 SELECT *, SUM(boxoffice.domestic_sales + boxoffice.international_sales) AS total_sales FROM movies INNER JOIN boxoffice ON movies.id = boxoffice.movie_id GROUP BY director;
 ```
 # Lesson 13: Inserting rows
+
 1.Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
 ```
 INSERT INTO movies (id, title, director, year, length_minutes) VALUES (15, "Toy Story 4", "John Lasseter", 2017, 110 );
@@ -258,7 +259,7 @@ UPDATE movies SET year = 1999 WHERE title = "Toy Story 2";
 UPDATE movies SET director = "Lee Unkrich", title = "Toy Story 3" WHERE title = "Toy Story 8";
 ```
 
-Lesson 15
+# Lesson 15
 1.This database is getting too big, lets remove all movies that were released before 2005.
 ```
  DELETE FROM movies WHERE year < 2005;
@@ -268,22 +269,23 @@ Lesson 15
 DELETE FROM movies WHERE director = "Andrew Stanton";
 ```
 
-Lesson 16
+# Lesson 16
 1.Create a new table named Database with the following columns: – Name A string (text) describing the name of the database – Version A number (floating point) of the latest version of this database – Download_count An integer count of the number of times this database was downloaded This table has no constraints.
 ```
  CREATE TABLE database (id INTEGER PRIMARY KEY, name TEXT, version FLOAT, download_count INTEGER );
- ```
-
-Lesson 17
+ 
+```
+# Lesson 17
 
 1.Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
 ```
 ALTER TABLE movies ADD aspect_ratio FLOAT;
 ```
+
 2.Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
 ```
  ALTER TABLE movies ADD language TEXT DEFAULT "English";
- ```
+```
 
 Lesson 18
 1.We've sadly reached the end of our lessons, lets clean up by removing the Movies table
@@ -292,6 +294,8 @@ DROP TABLE IF EXISTS movies;
 ```
 
 2.And drop the BoxOffice table as well
- ```
+
+```
 DROP TABLE IF EXISTS boxoffice;
 ```
+
