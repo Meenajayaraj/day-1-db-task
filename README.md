@@ -210,11 +210,12 @@ SELECT building, SUM(years_employed) FROM employees GROUP BY building;
 
 1.Find the number of Artists in the studio (without a HAVING clause) 
 
-'''
+```
 SELECT role, COUNT(*) as Number_of_artists FROM employees WHERE role = "Artist";
 ```
 
 2.Find the number of Employees of each role in the studio
+
 ```
 SELECT role, COUNT(*) as Number_of_employees_for_each_role FROM employees GROUP BY role;
 ```
