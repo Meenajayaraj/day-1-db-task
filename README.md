@@ -260,7 +260,7 @@ UPDATE movies SET year = 1999 WHERE title = "Toy Story 2";
 UPDATE movies SET director = "Lee Unkrich", title = "Toy Story 3" WHERE title = "Toy Story 8";
 ```
 
-# Lesson 15
+# Lesson 15: Deleting rows
 1.This database is getting too big, lets remove all movies that were released before 2005.
 ```
  DELETE FROM movies WHERE year < 2005;
@@ -270,13 +270,13 @@ UPDATE movies SET director = "Lee Unkrich", title = "Toy Story 3" WHERE title = 
 DELETE FROM movies WHERE director = "Andrew Stanton";
 ```
 
-# Lesson 16
+# Lesson 16: Creating tables
 1.Create a new table named Database with the following columns: – Name A string (text) describing the name of the database – Version A number (floating point) of the latest version of this database – Download_count An integer count of the number of times this database was downloaded This table has no constraints.
 ```
  CREATE TABLE database (id INTEGER PRIMARY KEY, name TEXT, version FLOAT, download_count INTEGER );
  
 ```
-# Lesson 17
+# Lesson 17: Altering tables
 
 1.Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
 ```
@@ -288,7 +288,8 @@ ALTER TABLE movies ADD aspect_ratio FLOAT;
  ALTER TABLE movies ADD language TEXT DEFAULT "English";
 ```
 
-Lesson 18
+# Lesson 18: Dropping tables
+
 1.We've sadly reached the end of our lessons, lets clean up by removing the Movies table
 ```
 DROP TABLE IF EXISTS movies;
